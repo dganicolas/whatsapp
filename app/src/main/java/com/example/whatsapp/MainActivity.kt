@@ -68,32 +68,33 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun primaryScreen(modifier: Modifier) {
     var ventanaModal by remember { mutableStateOf(false) }
-    val indices = LocalContext.current.resources.getStringArray(R.array.contactos).toList()
+    val resource = LocalContext.current
+    val indices = resource.resources.getStringArray(R.array.contactos).toList()
     if (ventanaModal) {
         AlertDialog(
             onDismissRequest = { ventanaModal = false },
             title = {
-                Text(text = "No ve ta to guapo esto", fontSize = 20.sp)
+                Text(text = resource.getString(R.string.titulo_ventana), fontSize = 20.sp)
             },
             text = {
-                Text("esto hasta aqui la desmostracion")
+                Text(resource.getString(R.string.mensaje_ventana))
             },
             confirmButton = {
                 Button(
                     onClick = { ventanaModal = false }
                 ) {
-                    Text("Aceptar")
+                    Text(resource.getString(R.string.Btn_ventana_aceptar))
                 }
             },
             dismissButton = {
                 Button(
                     onClick = { ventanaModal = false }
                 ) {
-                    Text("Cancelar")
+                    Text(resource.getString(R.string.Btn_ventana_denegar))
                 }
             },
             properties = DialogProperties(
-                dismissOnClickOutside = false  // Evita que se cierre al hacer clic fuera
+                dismissOnClickOutside = false
             )
         )
     }
@@ -109,25 +110,25 @@ fun primaryScreen(modifier: Modifier) {
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Whatsapp", fontSize = 40.sp)
+            Text(text = resource.getString(R.string.app_name), fontSize = 40.sp)
             Spacer(modifier = Modifier.weight(2f))
             Image(
                 painter = painterResource(R.drawable.pngwing),
-                contentDescription = "xd",
+                contentDescription = R.string.imagen_descripcion.toString(),
                 colorFilter = ColorFilter.tint(Color.White),
                 modifier = Modifier.size(45.dp)
             )
 
             Icon(
-                imageVector = Icons.Filled.Search, // Lupa de Material Icons
-                contentDescription = "Search icon", // Descripción para accesibilidad
-                tint = Color.White, // Color del icono
+                imageVector = Icons.Filled.Search,
+                contentDescription = resource.getString(R.string.icono1),
+                tint = Color.White,
                 modifier = Modifier
                     .size(50.dp)
             )
             Icon(
                 imageVector = Icons.Filled.MoreVert,
-                contentDescription = "More options icon",
+                contentDescription = resource.getString(R.string.icono2)  ,
                 tint = Color.White,
                 modifier = Modifier.size(50.dp)
             )
@@ -140,28 +141,29 @@ fun primaryScreen(modifier: Modifier) {
         )
         Row(
             modifier = Modifier
+                .background(Color.Gray)
                 .fillMaxWidth()
                 .height(45.dp)
         ) {
             Button(
                 onClick = {ventanaModal = true}
             ) {
-                Text("Todos", fontSize = 12.sp)
+                Text(resource.getString(R.string.Btn_menu_nav1), fontSize = 12.sp)
             }
             Button(
                 onClick = {ventanaModal = true}
             ) {
-                Text("No leídos", fontSize = 12.sp)
+                Text(resource.getString(R.string.Btn_menu_nav2), fontSize = 12.sp)
             }
             Button(
                 onClick = {ventanaModal = true}
             ) {
-                Text("Favoritos", fontSize = 12.sp)
+                Text(resource.getString(R.string.Btn_menu_nav3), fontSize = 12.sp)
             }
             Button(
                 onClick = {ventanaModal = true}
             ) {
-                Text("Grupos", fontSize = 12.sp)
+                Text(resource.getString(R.string.Btn_menu_nav4), fontSize = 12.sp)
             }
         }
         LazyColumn(
@@ -188,7 +190,7 @@ fun primaryScreen(modifier: Modifier) {
                 ) {
                     Icon(
                         imageVector = Icons.Filled.AccountCircle,
-                        contentDescription = "More options icon",
+                        contentDescription = resource.getString(R.string.icono2),
                         tint = Color.Black,
                         modifier = Modifier.size(50.dp)
                     )
@@ -198,21 +200,21 @@ fun primaryScreen(modifier: Modifier) {
                         Row {
                             Icon(
                                 imageVector = Icons.Filled.Check,
-                                contentDescription = "More options icon",
+                                contentDescription = resource.getString(R.string.icono2),
                                 tint = Color.Black,
                                 modifier = Modifier.size(18.dp)
                             )
-                            Text(text = "Texto de ejemplo")
+                            Text(text = resource.getString(R.string.Texto_de_chats))
                         }
                     }
                     Spacer(modifier = Modifier
                         .fillMaxWidth(0.8f)
                         .background(Color.Gray))
                     Column {
-                        Text("11:22")
+                        Text( resource.getString(R.string.Hora_de_chat))
                         Icon(
                             imageVector = Icons.Filled.Notifications,
-                            contentDescription = "More options icon",
+                            contentDescription = resource.getString(R.string.icono2),
                             tint = Color.Black,
                             modifier = Modifier.size(18.dp)
                         )
@@ -233,12 +235,12 @@ fun primaryScreen(modifier: Modifier) {
             ) {
                 Icon(
                     imageVector = Icons.Filled.Email,
-                    contentDescription = "More options icon",
+                    contentDescription = resource.getString(R.string.icono2),
                     tint = Color.Black,
                     modifier = Modifier.size(45.dp)
 
                 )
-                Text(text = "Chats", fontSize = 15.sp)
+                Text(text = resource.getString(R.string.Texto_de_chats_titulo), fontSize = 15.sp)
             }
             Column(
                 modifier = Modifier
@@ -247,12 +249,12 @@ fun primaryScreen(modifier: Modifier) {
             ) {
                 Icon(
                     imageVector = Icons.Filled.Info,
-                    contentDescription = "More options icon",
+                    contentDescription = resource.getString(R.string.icono2),
                     tint = Color.Black,
                     modifier = Modifier.size(45.dp)
 
                 )
-                Text(text = "Novedades", fontSize = 15.sp)
+                Text(text = resource.getString(R.string.Texto_de_novedades), fontSize = 15.sp)
             }
             Column(
                 modifier = Modifier
@@ -261,12 +263,12 @@ fun primaryScreen(modifier: Modifier) {
             ) {
                 Icon(
                     imageVector = Icons.Filled.Person,
-                    contentDescription = "More options icon",
+                    contentDescription = resource.getString(R.string.icono2),
                     tint = Color.Black,
                     modifier = Modifier.size(45.dp)
 
                 )
-                Text(text = "Comunidades", fontSize = 15.sp)
+                Text(text = resource.getString(R.string.Texto_de_comunidad), fontSize = 15.sp)
             }
             Column(
                 modifier = Modifier
@@ -275,12 +277,12 @@ fun primaryScreen(modifier: Modifier) {
             ) {
                 Icon(
                     imageVector = Icons.Filled.Call,
-                    contentDescription = "More options icon",
+                    contentDescription = resource.getString(R.string.icono2),
                     tint = Color.Black,
                     modifier = Modifier.size(45.dp)
 
                 )
-                Text(text = "Llamadas", fontSize = 15.sp)
+                Text(text = resource.getString(R.string.Texto_de_llamadas), fontSize = 15.sp)
             }
         }
     }

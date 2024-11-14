@@ -1,7 +1,24 @@
 <resources>
     <string name="app_name">whatsapp</string>
+    <string name="titulo_ventana">No ve ta to guapo esto</string>
+    <string name="mensaje_ventana">esto hasta aqui la desmostracion</string>
+    <string name="Btn_ventana_aceptar">Aceptar</string>
+    <string name="Btn_ventana_denegar">Cancelar</string>
+    <string name="imagen_descripcion">xd</string>
+    <string name="icono1">icono busqueda</string>
+    <string name="icono2">icono mas opciones</string>
+    <string name="Btn_menu_nav1">Todos</string>
+    <string name="Btn_menu_nav2">No leídos</string>
+    <string name="Btn_menu_nav3">Favoritos</string>
+    <string name="Btn_menu_nav4">Grupos</string>
+    <string name="Texto_de_chats">Texto de ejemplo</string>
+    <string name="Hora_de_chat">11:22</string>
+    <string name="Texto_de_novedades">Novedades</string>
+    <string name="Texto_de_comunidad">Comunidades</string>
+    <string name="Texto_de_llamadas">Llamadas</string>
+    <string name="Texto_de_chats_titulo">Chats</string>
     <string-array name="contactos">
-        <item>Carlos</item>
+        <item>Alba</item>
         <item>Juan</item>
         <item>María</item>
         <item>José</item>
