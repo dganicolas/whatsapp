@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">whatsapp</string>
+    <string-array name="contactos">
+        <item>Carlos</item>
+        <item>Juan</item>
+        <item>María</item>
+        <item>José</item>
+        <item>Laura</item>
+        <item>Ana</item>
+        <item>Pedro</item>
+        <item>Luis</item>
+        <item>Sofia</item>
+        <item>David</item>
+        <item>Emily</item>
+        <item>Michael</item>
+        <item>James</item>
+        <item>Maria</item>
+        <item>Isabella</item>
+        <item>George</item>
+        <item>John</item>
+        <item>Elizabeth</item>
+        <item>Carmen</item>
+        <item>Frank</item>
+    </string-array>
+</resources>
